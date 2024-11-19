@@ -36,6 +36,12 @@ public class AlumnoService {
     }
 
     public void delete(int id) {
+        // Verificamos si el alumno existe
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Alumno con id " + id + " no encontrado");
+        }
+        // Si existe, se elimina
         repository.deleteById(id);
     }
+    
 }
