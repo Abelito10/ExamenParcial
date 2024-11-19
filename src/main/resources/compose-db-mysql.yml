@@ -1,0 +1,19 @@
+version: "1"
+
+services:
+  mysql:
+    image: mysql:8.0.26
+    container_name: db-mysql
+    restart: always
+    environment:
+    - MYSQL_ROOT_PASSWORD=123
+    ports:
+    - 3307:3306
+    - 33061:33060
+    networks:
+    - td2024 
+    
+networks:
+  td2024:
+    name: ms-unu
+
